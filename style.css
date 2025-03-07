@@ -1,0 +1,316 @@
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --text-color: #1f2c3f; /* Dark text color for contrast */
+    --bg-color: #ffffff; /* White background color */
+    --section-bg: #f3f4f6; /* Lighter background for sections */
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    padding-top: 0; /* Remove the padding at the top */
+    margin: 0; /* Ensure no margin is added */
+}
+
+#navbar {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0; /* Stick to the top */
+    width: 100%;
+    background-color: var(--bg-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    margin: 0; /* Ensure no margin is added */
+    padding: 0; /* Ensure no padding is added */
+}
+
+.nav-content {
+    width: 100%; /* Ensure it spans the full width */
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 40px; /* Adjust the width as needed */
+    height: 40px; /* Ensure the height matches the width */
+    border-radius: 50%; /* Make the image circular */
+    margin-right: 10px; /* Add some space between the image and the text */
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color); /* Dark text color for contrast */
+    font-weight: 500;
+    transition: var (--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+    background-color: var(--bg-color); /* Ensure hero section has white background */
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--text-color); /* Ensure the text color is dark for better contrast */
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-color); /* Ensure the text color is dark for better contrast */
+}
+
+.highlight {
+    color: var(--primary-color);
+}
+
+.section {
+    padding: 5rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--section-bg); /* Lighter background for sections */
+}
+
+.section:nth-child(even) {
+    background-color: var(--section-bg);
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+/* About Section */
+#about {
+    height: 100vh; /* Full page height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--section-bg); /* Adjust as needed */
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba (0, 0, 0, 0.1);
+    width: 80%; /* Adjust the width as needed */
+    max-width: 800px;
+}
+
+.about-text {
+    margin-bottom: 20px;
+}
+
+.about-image {
+    margin-top: 20px;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Projects, Certificates, and Internships */
+.projects-grid,
+.certificates-grid,
+.internships-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 1024px) {
+    .projects-grid,
+    .certificates-grid,
+    .internships-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-grid,
+    .certificates-grid,
+    .internships-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.project-card,
+.certificate-card,
+.internship-card {
+    background-color: var(--section-bg); /* Lighter background for cards */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: var (--transition);
+}
+
+.project-card:hover,
+.certificate-card:hover,
+.internship-card:hover {
+    transform: translateY(-5px);
+}
+
+.certificate-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: var(--transition);
+}
+
+.certificate-card:hover .certificate-img {
+    transform: scale(1.5); /* Enlarge the image on hover */
+    z-index: 1;
+    position: relative;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Contact Options */
+.contact-options {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.contact-link:hover {
+    color: var(--secondary-color);
+}
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
+}
+
+/* Buttons */
+.cta-button,
+.submit-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: var(--primary-color); /* Blue color */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1rem;
+}
+
+.cta-button:hover,
+.submit-button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--section-bg); /* Lighter background for footer */
+    color: var(--text-color); /* Change footer text color to dark */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+}
