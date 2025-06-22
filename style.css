@@ -106,6 +106,9 @@ body {
   color: var(--primary-color);
   font-weight: 600;
 }
+.resume-button {
+  margin-top: 15px;
+}
 
 /* ===== Social Icons ===== */
 .social-icons {
