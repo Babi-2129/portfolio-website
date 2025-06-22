@@ -1,4 +1,3 @@
-/* ===== Variables and Base Styles ===== */
 :root {
   --primary-color: #d15252;
   --secondary-color: #a83232;
@@ -32,10 +31,12 @@ body {
   align-items: center;
   padding: 20px 30px;
   background-color: var(--bg-color);
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid #222;
+  transition: top 0.3s ease-in-out;
 }
 
 .logo-img {
@@ -70,6 +71,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-top: 100px;
   padding: 80px 30px;
   background-color: var(--bg-color);
 }
@@ -94,12 +96,7 @@ body {
   padding: 20px;
 }
 
-.first-name {
-  font-size: 2.5rem;
-  color: var(--primary-color);
-  font-weight: 700;
-}
-.last-name {
+.first-name, .last-name {
   font-size: 2.5rem;
   color: var(--primary-color);
   font-weight: 700;
@@ -110,7 +107,7 @@ body {
   font-weight: 600;
 }
 
-/* ===== Social Icons in Hero ===== */
+/* ===== Social Icons ===== */
 .social-icons {
   margin-top: 20px;
   display: flex;
@@ -129,7 +126,7 @@ body {
   transform: translateY(-5px) scale(1.1);
 }
 
-/* ===== Section Styles ===== */
+/* ===== Sections ===== */
 .section {
   padding: 80px 30px;
   text-align: center;
@@ -155,20 +152,16 @@ body {
 .grid {
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns:  repeat(auto-fit,minmax(240px, 1fr));
   margin-top: 20px;
 }
 
 .grid-2 {
-  display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
 }
 
 .grid-3 {
-  display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
 }
 
 /* ===== Cards ===== */
@@ -185,18 +178,18 @@ body {
   transform: translateY(-5px);
 }
 
-/* ===== Project Layout ===== */
-.project-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
+/* ===== Images & Links ===== */
+.certificate-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
 }
 
-.project-header h3 {
-  font-size: 1.1rem;
-  color: var(--primary-color);
-  margin: 0;
+.card:hover .certificate-img {
+  transform: scale(1.03);
 }
 
 .project-link {
@@ -211,20 +204,6 @@ body {
 
 .project-link:hover {
   background-color: var(--secondary-color);
-}
-
-/* ===== Certificate Images ===== */
-.certificate-img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.card:hover .certificate-img {
-  transform: scale(1.03);
 }
 
 /* ===== Contact Form ===== */
@@ -260,7 +239,7 @@ body {
   background-color: var(--secondary-color);
 }
 
-/* ===== Contact Options (LinkedIn, WhatsApp, Email) ===== */
+/* ===== Contact Icons ===== */
 .contact-options {
   margin-top: 30px;
   display: flex;
@@ -302,13 +281,14 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ===== Responsive Layout ===== */
+/* ===== Responsive ===== */
 @media (max-width: 1024px) {
   .grid-3 {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .grid-2 {
+  .grid-2,
+  .grid {
     grid-template-columns: 1fr;
   }
 }
