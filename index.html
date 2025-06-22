@@ -5,25 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Babi Pepakayala | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
   <!-- Navbar -->
- <nav class="navbar">
-  <div class="nav-logo">
-    <img src="https://res.cloudinary.com/dtdqxhkm4/image/upload/BP_logo_vumf5s.jpg" alt="BP Logo" class="logo-img" />
-  </div>
-  <ul class="nav-links">
-    <li><a href="#home" class="active">Home</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#internships">Internships</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#certificates">Certificates</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
+  <nav class="navbar">
+    <div class="nav-logo">
+      <img src="https://res.cloudinary.com/dtdqxhkm4/image/upload/BP_logo_vumf5s.jpg" alt="BP Logo" class="logo-img" />
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#internships">Internships</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
   <!-- Hero -->
   <header class="hero" id="home">
@@ -60,7 +59,7 @@
     </div>
   </section>
 
-  <!-- Internships (2x2 grid) -->
+  <!-- Internships -->
   <section class="section" id="internships">
     <h2>Internships</h2>
     <div class="grid grid-2">
@@ -87,34 +86,38 @@
     </div>
   </section>
 
-  <!-- Projects -->
+  <!-- Projects with Thumbnails -->
   <section class="section" id="projects">
     <h2>Projects</h2>
-    <div class="grid">
+    <div class="grid grid-3">
       <div class="card">
+        <img src="https://res.cloudinary.com/dtdqxhkm4/image/upload/Eda_x3gs6k.png" alt="Student EDA" class="certificate-img">
         <h3>Student Exam Performance - EDA</h3>
         <p>Used Jupyter and Power BI to analyze student performance data and trends.</p>
         <a href="https://github.com/Babi-2129/Student-Exam-Performance-An-EDA-Project" class="project-link">Source Code</a>
       </div>
       <div class="card">
+        <img src="https://res.cloudinary.com/dtdqxhkm4/image/upload/v1750581434/Hand_sign_ptkpga.jpg" alt="Handsign Detection" class="certificate-img">
         <h3>Handsign Detection</h3>
         <p>Python + OpenCV based sign recognition system (95% accuracy).</p>
         <a href="#" class="project-link">Source Code</a>
       </div>
       <div class="card">
+        <img src="https://res.cloudinary.com/dtdqxhkm4/image/upload/v1750581326/bus_crussp.jpg" alt="Bus Management" class="certificate-img">
         <h3>Bus Management System</h3>
         <p>Web app to manage transport and fee structure for students.</p>
         <a href="#" class="project-link">Source Code</a>
       </div>
       <div class="card">
-        <h3>Doctor Appointment Portal</h3>
-        <p>Frontend UI for scheduling and managing appointments.</p>
-        <a href="#" class="project-link">Source Code</a>
+        <img src="https://res.cloudinary.com/dtdqxhkm4/image/upload/YT_project_yhfopw.png" alt="YouTube Analytics" class="certificate-img">
+        <h3>YouTube Trending Video Analytics</h3>
+        <p>Multi-country EDA + Sentiment Analysis + Power BI dashboarding.</p>
+        <a href="https://github.com/Babi-2129/YouTube-Trending-Video-Analytics" class="project-link">Source Code</a>
       </div>
     </div>
   </section>
 
-  <!-- Certificates (3x3 grid) -->
+  <!-- Certificates -->
   <section class="section" id="certificates">
     <h2>Certificates</h2>
     <div class="grid grid-3">
