@@ -8,17 +8,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Navbar scroll hide/show effect
-let prevScrollpos = window.pageYOffset;
+// Sticky navbar scroll animation
+let prevScrollPos = window.pageYOffset;
+const navbar = document.querySelector(".navbar");
+
 window.onscroll = function () {
-  const navbar = document.querySelector(".navbar"); // You’re using class, not ID
   const currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
+  if (prevScrollPos > currentScrollPos) {
     navbar.style.top = "0";
   } else {
     navbar.style.top = "-100px";
   }
-  prevScrollpos = currentScrollPos;
+  prevScrollPos = currentScrollPos;
 };
 
 // Form submission handler
@@ -28,14 +29,13 @@ if (contactForm) {
     e.preventDefault();
     const formData = new FormData(this);
     const formEntries = Object.fromEntries(formData.entries());
-
     console.log('Form submitted:', formEntries);
     this.reset();
     alert('Thank you for your message! I will get back to you soon.');
   });
 }
 
-// Intersection animation for skill/cert cards
+// Card animations
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -45,7 +45,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.card').forEach((card) => {
+document.querySelectorAll('.card').forEach(card => {
   card.style.opacity = 0;
   card.style.transform = 'translateY(20px)';
   card.style.transition = 'all 0.6s ease-out';
