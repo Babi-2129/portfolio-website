@@ -138,12 +138,17 @@
   <!-- Contact -->
   <section class="section" id="contact">
   <h2>Contact Me</h2>
-  <!-- 1. Removed the "/" at the end of the opening form tag -->
-  <form class="contact-form" action="https://formsubmit.co/babipepakayala162129@gmail.com" method="POST">
+  <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+    <!-- 1. Paste your Web3Forms Access Key inside the value="" quotes below -->
+    <input type="hidden" name="access_key" value="f825dadc-8cfa-45af-84f7-2ff637d033a0" />
+
+    <!-- Optional: Custom subject line for your Gmail inbox -->
+    <input type="hidden" name="subject" value="New Portfolio Message from Website" />
+
     <input type="text" name="name" placeholder="Your Name" required />
     <input type="email" name="email" placeholder="Your Email" required />
-    <!-- 2. Added name="message" to the textarea -->
     <textarea name="message" placeholder="Your Message" required></textarea>
+
     <button type="submit" class="cta-button">Send</button>
   </form>
 
