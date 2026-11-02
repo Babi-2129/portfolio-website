@@ -138,11 +138,9 @@
   <!-- Contact -->
   <section class="section" id="contact">
   <h2>Contact Me</h2>
-  <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-    <!-- 1. Paste your Web3Forms Access Key inside the value="" quotes below -->
+  <!-- Added id="form" so the JavaScript can find it -->
+  <form id="form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
     <input type="hidden" name="access_key" value="f825dadc-8cfa-45af-84f7-2ff637d033a0" />
-
-    <!-- Optional: Custom subject line for your Gmail inbox -->
     <input type="hidden" name="subject" value="New Portfolio Message from Website" />
 
     <input type="text" name="name" placeholder="Your Name" required />
