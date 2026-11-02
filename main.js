@@ -1,10 +1,16 @@
-// Smooth scrolling for navigation links
+// Smooth scrolling for navigation links (ignores empty '#' links)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
+    const targetId = this.getAttribute('href');
+    if (targetId === '#') return;
+    
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      e.preventDefault();
+      targetElement.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
   });
 });
 
@@ -22,19 +28,6 @@ window.onscroll = function () {
   prevScrollPos = currentScrollPos;
 };
 
-// Form submission handler
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const formData = new FormData(this);
-    const formEntries = Object.fromEntries(formData.entries());
-    console.log('Form submitted:', formEntries);
-    this.reset();
-    alert('Thank you for your message! I will get back to you soon.');
-  });
-}
-
 // Card animations
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -51,37 +44,44 @@ document.querySelectorAll('.card').forEach(card => {
   card.style.transition = 'all 0.6s ease-out';
   observer.observe(card);
 });
+
+// Single Web3Forms submission handler
 const form = document.getElementById('form');
-const submitBtn = form.querySelector('button[type="submit"]');
 
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
+if (form) {
+  const submitBtn = form.querySelector('button[type="submit"]');
 
-  // Grab all form fields (including the hidden access_key in the HTML)
-  const formData = new FormData(form);
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-  const originalText = submitBtn.textContent;
-  submitBtn.textContent = "Sending...";
-  submitBtn.disabled = true;
+    const formData = new FormData(form);
+    const originalText = submitBtn.textContent;
 
-  try {
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    });
+    submitBtn.textContent = "Sending...";
+    submitBtn.disabled = true;
 
-    const data = await response.json();
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+        headers: {
+          "Accept": "application/json"
+        }
+      });
 
-    if (response.ok) {
-      alert("Success! Your message has been sent.");
-      form.reset();
-    } else {
-      alert("Error: " + data.message);
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        alert("Success! Your message has been sent.");
+        form.reset();
+      } else {
+        alert("Error: " + (data.message || "Could not send message."));
+      }
+    } catch (error) {
+      alert("Something went wrong. Please check your internet connection and try again.");
+    } finally {
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
     }
-  } catch (error) {
-    alert("Something went wrong. Please try again.");
-  } finally {
-    submitBtn.textContent = originalText;
-    submitBtn.disabled = false;
-  }
-});
+  });
+}
