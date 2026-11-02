@@ -137,28 +137,31 @@
 
   <!-- Contact -->
   <section class="section" id="contact">
-    <h2>Contact Me</h2>
-    <form class="contact-form" action="https://formsubmit.co/babipepakayala162129@gmail.com" method="POST" />
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit" class="cta-button">Send</button>
-    </form>
-    <div class="contact-options">
-      <a href="https://www.linkedin.com/in/babi-pepakayala/" class="contact-link" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="contact-icon" alt="LinkedIn" />
-        LinkedIn
-      </a>
-      <a href="https://wa.me/919542601046" class="contact-link" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/220/220236.png" class="contact-icon" alt="WhatsApp" />
-        WhatsApp
-      </a>
-      <a href="mailto:babipepakayala162129@gmail.com" class="contact-link">
-        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" class="contact-icon" alt="Email" />
-        Email
-      </a>
-    </div>
-  </section>
+  <h2>Contact Me</h2>
+  <!-- 1. Removed the "/" at the end of the opening form tag -->
+  <form class="contact-form" action="https://formsubmit.co/babipepakayala162129@gmail.com" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <!-- 2. Added name="message" to the textarea -->
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit" class="cta-button">Send</button>
+  </form>
+
+  <div class="contact-options">
+    <a href="https://www.linkedin.com/in/babi-pepakayala/" class="contact-link" target="_blank" rel="noopener noreferrer">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="contact-icon" alt="LinkedIn" />
+      LinkedIn
+    </a>
+    <a href="https://wa.me/919542601046" class="contact-link" target="_blank" rel="noopener noreferrer">
+      <img src="https://cdn-icons-png.flaticon.com/512/220/220236.png" class="contact-icon" alt="WhatsApp" />
+      WhatsApp
+    </a>
+    <a href="mailto:babipepakayala162129@gmail.com" class="contact-link">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" class="contact-icon" alt="Email" />
+      Email
+    </a>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer>
